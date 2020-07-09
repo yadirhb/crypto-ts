@@ -1,6 +1,6 @@
 import { WordArray } from '../lib';
 import { UTF8 } from '../encoders';
-import { Hasher, HasherClass } from '../lib/Hasher';
+import { BaseHasher, ConcreteHasher } from '../lib/Hasher';
 
 /**
  * HMAC algorithm.
@@ -8,7 +8,7 @@ import { Hasher, HasherClass } from '../lib/Hasher';
 export class HMAC {
   private oKey!: WordArray;
   private iKey!: WordArray;
-  private constructor(private hasher: Hasher, key: WordArray) {
+  private constructor(private hasher: BaseHasher, key: WordArray) {
     // Shortcuts
     const hasherBlockSize = hasher.blockSize;
     const hasherBlockSizeBytes = hasherBlockSize * 4;
@@ -43,14 +43,14 @@ export class HMAC {
   /**
    * Initializes a newly created HMAC.
    *
-   * @param {Hasher} hasher The hash algorithm to use.
+   * @param {BaseHasher} hasher The hash algorithm to use.
    * @param {WordArray|string} key The secret key.
    *
    * @example
    *
    *     var hmacHasher = CryptoJS.algo.HMAC.create(CryptoJS.algo.SHA256, key);
    */
-  static create(hasher: HasherClass, key: WordArray | string) {
+  static create(hasher: ConcreteHasher, key: WordArray | string) {
     // Convert string to WordArray, else assume WordArray already
     if (typeof key == 'string') {
       key = UTF8.parse(key);

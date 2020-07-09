@@ -1,4 +1,4 @@
-import { HasherClass, Hasher } from '../lib/Hasher';
+import { ConcreteHasher, BaseHasher } from '../lib/Hasher';
 import { WordArray } from '../lib';
 
 // Initialization and round constants tables
@@ -41,8 +41,8 @@ const K: number[] = [];
 // Reusable object
 const W: any[] = [];
 
-export const SHA256: HasherClass = class SHA256 extends Hasher {
-  private constructor() {
+export const SHA256: ConcreteHasher = class SHA256 extends BaseHasher {
+  constructor() {
     super();
   }
   static create() {
