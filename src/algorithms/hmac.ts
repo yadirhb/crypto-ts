@@ -1,6 +1,6 @@
-import { WordArray } from "../lib";
-import { UTF8 } from "../encoders";
-import { Hasher, HasherClass } from "../lib/Hasher";
+import { WordArray } from '../lib';
+import { UTF8 } from '../encoders';
+import { Hasher, HasherClass } from '../lib/Hasher';
 
 /**
  * HMAC algorithm.
@@ -52,7 +52,7 @@ export class HMAC {
    */
   static create(hasher: HasherClass, key: WordArray | string) {
     // Convert string to WordArray, else assume WordArray already
-    if (typeof key == "string") {
+    if (typeof key == 'string') {
       key = UTF8.parse(key);
     }
 

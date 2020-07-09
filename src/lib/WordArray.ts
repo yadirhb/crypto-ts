@@ -1,7 +1,7 @@
 // import "react-native-get-random-values";
-import { Encoder } from "../encoders";
-import { Hex } from "../encoders/hex";
-import uuid from "uuid-random";
+import { Encoder } from '../encoders';
+import { Hex } from '../encoders/hex';
+import uuid from 'uuid-random';
 /*
  * Cryptographically secure pseudorandom number generator
  *
@@ -94,7 +94,8 @@ export class WordArray {
     const sigBytes = this.sigBytes;
 
     words[sigBytes >>> 2] &= 0xffffffff << (32 - (sigBytes % 4) * 8);
-    words.length = Math.ceil(sigBytes / 4);
+    // @TODO fix this line
+    // words.length = Math.ceil(sigBytes / 4);
   }
 
   /**

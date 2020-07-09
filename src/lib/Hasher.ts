@@ -1,6 +1,6 @@
-import { BufferedBlockAlgorithm } from "./BufferedBlockAlgorithm";
-import { HMAC } from "../algorithms/hmac";
-import { WordArray } from ".";
+import { BufferedBlockAlgorithm } from './BufferedBlockAlgorithm';
+import { HMAC } from '../algorithms/hmac';
+import { WordArray } from '.';
 
 export interface HasherClass {
   create(...args: any[]): Hasher;
@@ -99,7 +99,7 @@ export abstract class Hasher extends BufferedBlockAlgorithm {
    *     const SHA256 = CryptoJS.lib.Hasher._createHelper(CryptoJS.algo.SHA256);
    */
   static _createHelper(hasher: HasherClass) {
-    return function (message: string, args: any[]) {
+    return function(message: string, args: any[]) {
       return hasher.create(...args).finalize(message);
     };
   }
@@ -118,7 +118,7 @@ export abstract class Hasher extends BufferedBlockAlgorithm {
    *     const HmacSHA256 = CryptoJS.lib.Hasher._createHmacHelper(CryptoJS.algo.SHA256);
    */
   static _createHmacHelper(hasher: HasherClass) {
-    return function (message: string | WordArray, key: string | WordArray) {
+    return function(message: string | WordArray, key: string | WordArray) {
       return HMAC.create(hasher, key).finalize(message);
     };
   }

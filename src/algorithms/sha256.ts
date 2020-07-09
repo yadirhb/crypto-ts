@@ -1,12 +1,12 @@
-import { HasherClass, Hasher } from "../lib/Hasher";
-import { WordArray } from "../lib";
+import { HasherClass, Hasher } from '../lib/Hasher';
+import { WordArray } from '../lib';
 
 // Initialization and round constants tables
 const H: any[] = [];
 const K: number[] = [];
 
 // Compute constants
-(function () {
+(function() {
   function isPrime(n: number) {
     const sqrtN = Math.sqrt(n);
     for (let factor = 2; factor <= sqrtN; factor++) {

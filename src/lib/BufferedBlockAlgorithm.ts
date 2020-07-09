@@ -1,6 +1,6 @@
-import { WordArray } from "./WordArray";
-import { UTF8 } from "../encoders";
-import { Base } from "./Base";
+import { WordArray } from './WordArray';
+import { UTF8 } from '../encoders';
+import { Base } from './Base';
 
 /**
  * Abstract buffered block algorithm template.
@@ -64,7 +64,7 @@ export abstract class BufferedBlockAlgorithm extends Base {
    */
   protected append(data: string | WordArray) {
     // Convert string to WordArray, else assume WordArray already
-    if (typeof data == "string") {
+    if (typeof data == 'string') {
       data = UTF8.parse(data);
     }
 

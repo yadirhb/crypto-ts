@@ -1,5 +1,5 @@
-import { Encoder } from ".";
-import { WordArray } from "../lib";
+import { Encoder } from '.';
+import { WordArray } from '../lib';
 
 /**
  * Latin1 encoding strategy.
@@ -56,6 +56,6 @@ export const Latin1: Encoder = class Latin1 {
       latin1Chars.push(String.fromCharCode(bite));
     }
 
-    return latin1Chars.join("");
+    return latin1Chars.join('');
   }
 };

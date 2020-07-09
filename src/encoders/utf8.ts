@@ -1,6 +1,6 @@
-import { Encoder } from ".";
-import { WordArray } from "../lib";
-import { Latin1 } from "./latin1";
+import { Encoder } from '.';
+import { WordArray } from '../lib';
+import { Latin1 } from './latin1';
 
 /**
  * UTF-8 encoding strategy.
@@ -40,7 +40,7 @@ export const UTF8: Encoder = class UTF8 {
     try {
       return decodeURIComponent(escape(Latin1.stringify(wordArray)));
     } catch (e) {
-      throw new Error("Malformed UTF-8 data");
+      throw new Error('Malformed UTF-8 data');
     }
   }
 };

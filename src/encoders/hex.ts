@@ -1,5 +1,5 @@
-import { Encoder } from "./";
-import { WordArray } from "../lib/WordArray";
+import { Encoder } from './';
+import { WordArray } from '../lib/WordArray';
 
 /**
  * Hex encoding strategy.
@@ -54,6 +54,6 @@ export const Hex: Encoder = class Hex {
       hexChars.push((bite & 0x0f).toString(16));
     }
 
-    return hexChars.join("");
+    return hexChars.join('');
   }
 };

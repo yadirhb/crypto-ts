@@ -1,1 +1,1 @@
-export * from "./WordArray";
+export * from './WordArray';

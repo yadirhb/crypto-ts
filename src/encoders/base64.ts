@@ -1,5 +1,5 @@
-import { Encoder } from ".";
-import { WordArray } from "../lib";
+import { Encoder } from '.';
+import { WordArray } from '../lib';
 
 function parseLoop(
   base64Str: string,
@@ -22,7 +22,7 @@ function parseLoop(
 
 export const Base64: Encoder = class Base64 {
   private static map: string =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
   private static reverseMap: number[] = [];
 
   /**
@@ -84,6 +84,6 @@ export const Base64: Encoder = class Base64 {
       }
     }
 
-    return base64Chars.join("");
+    return base64Chars.join('');
   }
 };
