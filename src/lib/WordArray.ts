@@ -1,15 +1,15 @@
-// import "react-native-get-random-values";
+import 'react-native-get-random-values';
 import { Encoder } from '../encoders';
 import { Hex } from '../encoders/hex';
-import uuid from 'uuid-random';
+// import uuid from 'uuid-random';
 /*
  * Cryptographically secure pseudorandom number generator
  *
  * As Math.random() is cryptographically not safe to use
  */
 function cryptoSecureRandomInt() {
-  return uuid.bin()[0];
-  // return crypto.getRandomValues(new Uint32Array(1))[0];
+  // return uuid.bin()[0];
+  return crypto.getRandomValues(new Uint32Array(1))[0];
 }
 
 type TypedArray =
