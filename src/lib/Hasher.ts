@@ -60,7 +60,7 @@ export abstract class BaseHasher extends BufferedBlockAlgorithm
 
   protected hash!: WordArray;
 
-  protected constructor() {
+  constructor() {
     super(512 / 32);
   }
 

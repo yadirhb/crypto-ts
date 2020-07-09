@@ -42,9 +42,6 @@ const K: number[] = [];
 const W: any[] = [];
 
 export const SHA256: ConcreteHasher = class SHA256 extends BaseHasher {
-  constructor() {
-    super();
-  }
   static create() {
     return new SHA256();
   }
